@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Assistant Suites et Séries</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+    <script src="/static/app.js" defer></script>
+</head>
+<body>
+
+    <h1>Convergence des suites et séries</h1>
+    <p>Entrer une expression (Suite ou série) en fonction de n</p>
+
+    <div class="bloc">
+        <label for="type_input">Type de l'expression :</label>
+        <select id="type_input">
+            <option value="Suite">Suite</option>
+            <option value="Série">Série</option>
+        </select>
+
+        <label for="user_input1">Terme général en fonction de n :</label>
+        <input type="text" id="user_input1" placeholder="Ex : 1/n^2, (-1)^n/n, 1/(n*ln(n))">
+
+        <label for="user_input2">Valeur minimale de n (pour une série) :</label>
+        <input type="number" id="user_input2" value="1">
+
+        <button id="btn_run" onclick="run()">Vérifier la convergence</button>
+    </div>
+
+    <div id="out" class="resultats"></div>
+
+</body>
+</html>

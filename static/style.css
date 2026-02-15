@@ -1,0 +1,103 @@
+/*
+    CSS écrit manuellement :
+    - aucune logique mathématique ici
+    - uniquement l’interface
+*/
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f5f7fb;
+    margin: 0;
+    padding: 20px;
+    color: #222;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+.bloc {
+    background-color: white;
+    max-width: 650px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1f6391;
+}
+
+.resultats {
+    max-width: 980px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.msg {
+    margin: 10px 0;
+    padding: 8px;
+}
+
+.latex {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.info {
+    background-color: #eaf4ff;
+    border-left: 4px solid #3498db;
+}
+
+.error {
+    background-color: #ffeaea;
+    border-left: 4px solid #e74c3c;
+    color: #b30000;
+}
+
+.plot {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
