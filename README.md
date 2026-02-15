@@ -199,7 +199,7 @@ Chaque type adapte automatiquement les champs affichés.
 
 ### 6.2 Renseigner l’expression
 
-La syntaxe utilisée est celle de **SymPy**.
+La syntaxe utilisée est celle de **SymPy** .
 
 Exemples valides :
 
@@ -213,11 +213,12 @@ exp(x)
 1/(1-x)
 log(1+x)
 ```
+Ce ne sont pas les seuls.
 
 Rappels importants :
 
-- Les puissances s’écrivent avec `**`
-- Les factorielles : `factorial(n)`
+- Les puissances s’écrivent avec `**` ou `^`
+- Les factorielles : `factorial(n)` ou `!`
 - Le logarithme naturel : `log(x)` ou `ln(x)`
 - Les constantes : `pi`, `E`
 - Les fonctions trigonométriques : `sin`, `cos`, `tan`, etc.
