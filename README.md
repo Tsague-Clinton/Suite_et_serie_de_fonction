@@ -1,144 +1,111 @@
+# Assistant Mathématique (L2) — Suites, Séries, Séries de fonctions, Séries entières
 
-📘 Assistant d’Analyse des Suites et Séries
-Projet de Licence 2 – Mathématiques
-📌 Présentation
-Ce projet est une application web développée dans le cadre d’une Licence 2 de Mathématiques.
-Il permet d’étudier de manière interactive :
-Suites numériques
-Séries numériques
-Suites de fonctions
-Séries de fonctions
-Séries entières
-Développements en série entière
-L’objectif est pédagogique : mettre en pratique les notions d’analyse vues en L2 tout en développant une application structurée combinant calcul symbolique et visualisation graphique.
-Le projet reste en cours d’amélioration et n’est pas encore exhaustif.
-🎯 Objectifs pédagogiques
-Ce projet vise à :
-Structurer un raisonnement mathématique rigoureux
-Implémenter des critères classiques de convergence
-Manipuler des expressions symboliques
-Traduire un raisonnement mathématique en code
-Concevoir une interface interactive cohérente
-✨ Fonctionnalités actuelles
-1️⃣ Suites numériques
-Calcul symbolique de limite
-Détermination convergence / divergence
-Représentation graphique
-2️⃣ Séries numériques
-Construction des sommes partielles
-Application de critères classiques
-Visualisation des termes et des sommes
-3️⃣ Suites de fonctions
-Étude sur intervalle paramétrable
-Analyse de convergence
-Visualisation graphique
-4️⃣ Séries de fonctions
-Gestion de l’indice de départ
-Étude sur intervalle choisi
-Visualisation des sommes partielles
-5️⃣ Séries entières
-Mise sous la forme
-uₙ(x) = aₙ · (z(x))ⁿ
-Extraction automatique de aₙ et z(x)
-Calcul du rayon de convergence :
-Formule de Cauchy–Hadamard
-Critère de d’Alembert
-Étude des zones de convergence
-Analyse du bord
-Traduction sur un intervalle choisi
-Visualisation graphique
-6️⃣ Développement en série entière
-Calcul de développement de Taylor
-Détermination de l’intervalle de convergence
-Visualisation des polynômes tronqués
-🛠 Technologies utilisées
-Backend
-Python 3
-Flask
-SymPy
-NumPy
-Matplotlib
-Frontend
-HTML5
-CSS3
-JavaScript
-MathJax (rendu des formules mathématiques)
-📂 Structure du projet
-Copy code
+## 1) Présentation générale
 
-project/
-│
-├── app.py
-├── templates/
-│   └── index.html
-├── static/
-│   ├── style.css
-│   └── app.js
-└── README.md
-⚙️ Installation
-1️⃣ Cloner le dépôt
-Copy code
-Bash
-git clone https://github.com/votre-username/nom-du-projet.git
-cd nom-du-projet
-2️⃣ Créer un environnement virtuel (recommandé)
-Copy code
-Bash
-python -m venv venv
-Activation :
-Windows
-Copy code
-Bash
-venv\Scripts\activate
-Linux / macOS
-Copy code
-Bash
-source venv/bin/activate
-3️⃣ Installer les dépendances
-Copy code
-Bash
-pip install flask sympy numpy matplotlib
-4️⃣ Lancer l’application
-Copy code
-Bash
-python app.py
-5️⃣ Accéder à l’interface
-Ouvrir le navigateur à l’adresse :
-Copy code
+Ce dépôt contient une application web pédagogique (niveau **Licence 2**) destinée à **assister** l’étude de plusieurs objets classiques d’analyse :
 
-http://127.0.0.1:5000
-📖 Exemples d’utilisation
-Exemple 1 — Série entière
-Entrée :
-Copy code
+- **Suites numériques**
+- **Séries numériques**
+- **Suites de fonctions**
+- **Séries de fonctions**
+- **Séries entières** (rayon de convergence, convergence sur un intervalle, étude du bord)
+- **Développement en série entière** (Taylor au voisinage de 0, visualisation des tronqués)
 
-x^n/n!
-Indice minimal : 0
-Résultat attendu :
-Rayon de convergence : +∞
-Convergence sur ℝ
-Fonction somme : exp(x)
-Exemple 2 — Série numérique
-Entrée :
-Copy code
+L’objectif n’est pas de remplacer un raisonnement de cours, mais d’offrir :
+- des **calculs symboliques** (quand c’est possible),
+- des **affichages structurés** (formules + explications),
+- des **visualisations** (sommes partielles, fonctions limites, tronqués).
 
-1/n^2
-Indice minimal : 1
-Résultat attendu :
-Convergence
-Visualisation graphique
-🚧 Limites actuelles
-Projet encore en développement
-Certaines analyses restent perfectibles
-Les performances peuvent varier selon la complexité des expressions
-La partie Séries de Fourier est en cours d’implémentation
-📚 Contexte académique
-Projet réalisé dans le cadre d’une Licence 2 en Mathématiques.
-Il s’agit d’un projet d’apprentissage visant à consolider les bases d’analyse réelle et de calcul formel.
-🔄 Évolutions prévues
-Finalisation des séries de Fourier
-Amélioration de l’interface utilisateur
-Optimisation des calculs symboliques
-Enrichissement des critères de convergence
-Gestion plus fine des cas limites
-📄 Licence
+> Remarque : le projet est en cours d’amélioration et ne couvre pas encore tous les cas pathologiques ou très avancés.
+
+---
+
+## 2) Fonctionnalités (ce que l’application fait)
+
+### 2.1 Suites numériques
+- Saisie d’un terme général `u_n`
+- Calcul de `lim_{n→∞} u_n` (si SymPy le permet)
+- Conclusion convergence / divergence (selon la limite obtenue)
+- Graphe de la suite (si la fonction de tracé est disponible)
+
+### 2.2 Séries numériques
+- Saisie du terme général `u_n`
+- Saisie de l’indice de départ
+- Construction des sommes partielles
+- Application de critères (selon les fonctions du projet)
+- Visualisation : terme général et sommes partielles (si disponible)
+
+### 2.3 Suites de fonctions
+- Saisie de `f_n(x)`
+- Choix d’un intervalle d’étude `I`
+- Limite simple `lim_{n→∞} f_n(x)` (si accessible)
+- Graphe de plusieurs `f_n` et de la limite (si trouvée)
+
+### 2.4 Séries de fonctions
+- Saisie de `u_n(x)`
+- Indice de départ
+- Choix d’un intervalle d’étude `I`
+- Visualisation des sommes partielles `S_N(x)` sur `I`
+
+### 2.5 Séries entières (et séries de puissances)
+- Saisie du terme général (ex : `x^n/n!`, `(-1)^n*x^n`, `(x-1)^n`, etc.)
+- Réécriture sous une forme exploitable `a_n (z(x))^n` quand c’est possible
+- Calcul détaillé du **rayon de convergence** via :
+  - **Cauchy–Hadamard** (prioritaire)
+  - puis **d’Alembert** en recours (si nécessaire)
+- Détermination de la zone :
+  - `|z(x)| < R` (convergence absolue)
+  - `|z(x)| > R` (divergence)
+  - étude du **bord** `|z(x)| = R` avec critères de séries numériques (si disponibles)
+- Visualisation : sommes partielles + éventuelle fonction somme (si déterminable)
+
+### 2.6 Développement en série entière (Taylor)
+- Saisie d’une fonction `f(x)`
+- Choix d’un ordre (par défaut 10)
+- Calcul du polynôme tronqué et/ou forme de série
+- Estimation du rayon de convergence quand possible
+- Visualisation : `f(x)` et les tronqués de Taylor
+
+---
+
+## 3) Technologies utilisées
+
+### Backend
+- **Python 3**
+- **Flask** : serveur web (routes `/` et `/compute`)
+- **SymPy** : calcul symbolique (limites, sommes, simplifications, intégrales éventuelles)
+- **NumPy** : évaluations numériques (vectorisation)
+- **Matplotlib** : génération de figures (renvoyées en base64)
+
+### Frontend
+- **HTML/CSS/JavaScript**
+- **MathJax** : rendu LaTeX dans le navigateur
+- Communication via `fetch("/compute")` en JSON
+
+---
+
+## 4) Structure typique du dépôt
+
+*(Les noms peuvent varier selon ton dépôt, mais la logique est la suivante.)*
+
+- `app.py`  
+  Serveur Flask, parsing des entrées, appels aux fonctions d’étude, renvoi des résultats.
+- `templates/index.html`  
+  Interface : choix du type d’étude, champs de saisie, bloc intervalle, zone résultats.
+- `static/app.js`  
+  Gestion UI : champs affichés/masqués selon le type, construction du payload, affichage des messages.
+- `static/style.css`  
+  Style de l’interface.
+
+---
+
+## 5) Installation (pas à pas, fiable)
+
+### 5.1 Prérequis
+- Python **3.10+** recommandé
+- `pip` installé
+
+### 5.2 Cloner le projet
+```bash
+git clone https://github.com/<votre-utilisateur>/<votre-repo>.git
+cd <votre-repo>
